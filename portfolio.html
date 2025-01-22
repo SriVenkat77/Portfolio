@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Venkat Portfolio</title>
+    <link rel="stylesheet" href="sample.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS Backup -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome (Latest Version) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      /* Default light mode styles */
+      body {
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      /* Dark mode styles */
+      body.dark {
+        background: linear-gradient(to left, #b8e0a9, #55d946, #826ac9);
+
+        color: #06030f;
+      }
+
+      .dark .bg-gray-50 {
+        background-color: #bab2e8;
+      }
+
+      .dark .bg-white {
+        background-color: #bab2e8;
+      }
+
+      .dark .text-gray-800 {
+        
+        color: #16bdda;
+      }
+
+      .dark .content {
+        
+        color: #40178c;
+      }
+
+      .dark .text-gray-600 {
+        
+        color: #59d616;
+      }
+/* description */
+      .dark .text-gray-700 {
+        
+        color: #6b0f0f;
+      }
+/* TITLE */
+      .dark .text-violet-600 {  
+        
+        color: #694fdc;
+      }
+
+  
+    </style>
+  </head>
+  
+  <body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
+    <!-- Navbar -->
+    <header class="w-full fixed top-0 bg-gray-400 shadow-md py-3 px-8 flex items-center z-10">
+      <!-- Logo (Left side) -->
+      <div class="text-2xl font-bold text-gray-700">
+        Venkateshwaran V
+      </div>
+  
+      <!-- Navbar Menu and Other Elements -->
+      <nav class="ml-auto flex items-center space-x-6">
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+          <li><a href="#home" class="hover:text-violet-600">Home</a></li>
+          <li><a href="#about" class="hover:text-violet-600">About</a></li>
+          <li><a href="#projects" class="hover:text-violet-600">Projects</a></li>
+          <li><a href="#skills" class="hover:text-violet-600">Skills</a></li>
+          <li><a href="#contact" class="hover:text-violet-600">Contact</a></li>
+        </ul>
+  
+        <!-- Theme Toggle (Moon Icon for Dark/Light Mode) -->
+        <button id="theme-toggle" class="text-2xl text-gray-700">
+          <i class="fas fa-sun-moon text-2xl">🌙</i>
+        </button>
+  
+        <!-- Mobile Menu Button (Toggle Button) -->
+        <button id="menu-toggle" class="md:hidden text-violet-600 text-2xl">
+          ☰
+        </button>
+      </nav>
+  
+      <!-- Mobile Menu (Initially Hidden) -->
+      <ul id="mobile-menu" class="hidden md:hidden space-y-4 text-gray-700 font-semibold absolute top-0 left-0 right-0 bg-blue-200 shadow-md p-4 mt-12 z-20">
+        <li><a href="#home" class="mobile-nav-link hover:text-violet-600">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link hover:text-violet-600">About</a></li>
+        <li><a href="#projects" class="mobile-nav-link hover:text-violet-600">Projects</a></li>
+        <li><a href="#skills" class="mobile-nav-link hover:text-violet-600">Skills</a></li>
+        <li><a href="#contact" class="mobile-nav-link hover:text-violet-600">Contact</a></li>
+      </ul>
+    </header>
+  
+    <script>
+      // Mobile Menu Toggle Functionality
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mainContent = document.getElementById('main-content');
+  
+      // Toggle mobile menu visibility
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+  
+        // Adjust main content padding if menu is visible
+        if (!mobileMenu.classList.contains('hidden')) {
+          mainContent.style.paddingTop = `${mobileMenu.offsetHeight + 48}px`; // 48px for header height
+        } else {
+          mainContent.style.paddingTop = '96px'; // Default header height
+        }
+      });
+  
+      // Close mobile menu on link click
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mainContent.style.paddingTop = '96px'; // Reset to default header height
+        });
+      });
+  
+      // Dark/Light Mode Toggle Script
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('dark-mode');
+      });
+    </script>
+    
+    
+<main id="main-content" class="pt-24">
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-8 pt-24"
+    >
+      <!-- Left Content -->
+      <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
+        <h1 class="text-5xl font-bold">
+          Hi, I'm <span class="text-violet-900">Venkat</span>
+        </h1>
+        <p class="text-lg text-gray-700">
+         <span class="font-bold">MERN Stack Developer</span> <br> "Passionate Full Stack Developer | Building Scalable Solutions"
+        </p> <br>
+        <a
+          href="#contact"
+          class="bg-violet-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-900 transition"
+        >
+          Contact Me
+        </a>
+      </div>
+      <!-- Right Image -->
+      <div class="w-full md:w-1/4 flex justify-center items-center">
+        <div class="relative w-80 h-80">
+          <!-- Neon Border -->
+          <div class="absolute inset-0 rounded-full border-4 "></div>
+          <!-- Image -->
+          <img
+            src="./pp.jpg"
+            alt="Hero Image"
+            class="w-full h-full object-cover rounded-full"
+          />
+        </div>
+      </div>
+      
+    </section>
+    
+
+    <!-- About Section -->
+<section id="about" class="py-16 px-8 ">
+    <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">
+      About Me
+    </h2>
+    
+    <div class="flex flex-col md:flex-row items-center max-w-7xl mx-auto">
+      <!-- Left Part: Image -->
+      <div class="flex-shrink-0 mb-6 md:mb-0 md:w-1/4">
+        <img 
+          src="./abme-Photoroom.png" 
+          alt="About Me" 
+          class="w-full h-auto rounded-lg  bg-transparent"
+        />
+      </div>
+      
+  
+      <!-- Right Part: Content -->
+      <div class="md:w-1/2 md:pl-12">
+        <p class="text-gray-700 leading-relaxed mb-4">
+          As a passionate and driven MERN Stack Developer, I specialize in building seamless, dynamic web applications with a focus on both frontend and backend technologies. With a strong foundation in MongoDB, Express.js, React.js, and Node.js, I create efficient and scalable full-stack solutions. I am committed to delivering clean, responsive designs and implementing intuitive user interfaces that enhance user experience. By leveraging RESTful APIs, UI/UX principles, and end-to-end development practices, I bring innovative ideas to life, ensuring each project is both functional and user-centric within the MERN stack ecosystem.
+        </p>
+        
+        <!-- Download Resume Button -->
+        <a href="path/to/your-resume.pdf" 
+          class="inline-block bg-violet-600 text-white py-2 px-6 rounded-lg hover:bg-violet-700 transition duration-300"
+          download="My_Resume">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+    
+<!-- Projects Section --> 
+<section id="projects" class="py-16">
+  <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">Projects</h2>
+  
+  <div id="projectCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#projectCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Project 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#projectCarousel"
+        data-bs-slide-to="1"
+        aria-label="Project 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#projectCarousel"
+        data-bs-slide-to="2"
+        aria-label="Project 3"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#projectCarousel"
+        data-bs-slide-to="3"
+        aria-label="Project 4"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#projectCarousel"
+        data-bs-slide-to="4"
+        aria-label="Project 5"
+      ></button>
+    </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+      <!-- Project 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex align-items-center border-0 shadow-lg ">
+          <div class="col-md-6">
+            <img
+              src="./Forksy2.jpg"
+              class="w-100 rounded-start"
+              alt="Project 1"
+            />
+          </div>
+          <div class="col-md-6 p-4">
+            <h3 class="text-xl font-bold">Forksy</h3>
+            <p class="text-gray-700">
+              Online Food Delivery System
+A seamless platform to discover restaurants, browse menus, place orders. <br/>
+	• Restaurant Listings: Explore profiles with details like cuisine and menus.<br/>
+	• Menu Browsing: View menus with customizable options and save favorites for easy access.<br/>
+	• Order Tracking: Real-time updates from order placement to delivery with notifications.<br/>
+	• Secure Payments: Integrated Razorpay for fast, secure transactions and payment history.<br/>
+	• User Management: Secure sign-up/login with JWT, profile management, and order history access.<br/>
+📌 Technologies Used: React, Node.js, Express, MongoDB, TailwindCSS, Razorpay<br/>
+🌟 Highlights: Responsive design, real-time updates, and scalable architecture.
+
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a
+                href="https://forksy.netlify.app"
+                target="_blank"
+                class="btn btn-primary"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/project-repo-1"
+                target="_blank"
+                class="btn btn-dark"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center border-0 shadow-lg ">
+          <div class="col-md-6">
+            <img
+              src="./occasio2.jpg"
+              class="w-100 rounded-start"
+              alt="Project 2"
+            />
+          </div>
+          <div class="col-md-6 p-4">
+            <h3 class="text-xl font-bold">Occasio</h3>
+            <p class="text-gray-700">
+           A platform to discover, create, manage, and register for events with seamless ticketing, payment, and QR code generation. <br/>
+	• Event Listings: Browse upcoming events with details like name, date, time, and location.<br/>
+	• Ticketing System: Securely register for events and get unique QR-coded tickets.<br/>
+	• Payment Integration: Seamless payment processing via Razorpay for event registration.<br/>
+	• User Authentication: Secure sign-up/login with JWT for managing event registrations.<br/>
+	• Responsive Design: Fully mobile-friendly UI using TailwindCSS.<br/>
+📌 Technologies Used: React, Node.js, Express, MongoDB, Razorpay, TailwindCSS<br/>
+🌟 Highlights: User-friendly event management, secure payments, and QR code generation.
+
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a
+                href="https://0ccasio.netlify.app/"
+                target="_blank"
+                class="btn btn-primary"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/project-repo-2"
+                target="_blank"
+                class="btn btn-dark"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center border-0 shadow-lg ">
+          <div class="col-md-6">
+            <img
+              src="./Expenzo.jpg"
+              class="w-100 rounded-start"
+              alt="Project 3"
+            />
+          </div>
+          <div class="col-md-6 p-4">
+            <h3 class="text-xl font-bold">FixmyRide</h3>
+            <p class="text-gray-700">
+              Using MERN Stack technology, the Expense Tracker enables users to monitor their financial activities effectively.<br/>
+	• User Authentication: Secure sign-up/login with JWT.<br/>
+	• Income and Expense Tracking: Add, categorize, and analyze transactions.<br/>
+	• Dashboard Overview: Visual insights with total income, expenses, and balance.<br/>
+	• Data Visualization: Interactive charts showing trends and category-wise expenses.<br/>
+	• Transaction History: Editable and filterable lists for better management.<br/>
+📌 Technologies Used: React, Node.js, Express, MongoDB<br/>
+🌟 Highlights: Responsive design and scalable architecture.
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a
+                href="https://project-demo-link-3.com"
+                target="_blank"
+                class="btn btn-primary"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/project-repo-3"
+                target="_blank"
+                class="btn btn-dark"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center border-0 shadow-lg ">
+          <div class="col-md-6 ">
+            <img
+              src="./Spotify1.jpg"
+              class="w-100 rounded-start"
+              alt="Project 4"
+            />
+          </div>
+          <div class="col-md-6 p-4">
+            <h3 class="text-xl font-bold">Spotify-Clone</h3>
+            <p class="text-gray-700">
+              Using MERN Stack technology, the Spotify Clone provides users with a seamless music streaming experience and an admin panel for managing content. <br/>
+
+• User Authentication: Secure registration, login, and password reset with JWT-based <br/>
+• Music Streaming: Explore albums, songs and play music with an integrated audio player.<br/>
+• Admin Panel: Add and manage albums, songs, and associated images using a user-friendly interface with Cloudinary integration for image uploads.<br/>
+• Search Functionality: Dynamic search bar for finding songs by title.<br/>
+
+📌 Technologies Used: React, Node.js, Express, MongoDB, Cloudinary<br/>
+🌟 Highlights: Responsive design, modern UI with TailwindCSS, and scalable architecture.
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a
+                href="https://spotifyn.netlify.app/"
+                target="_blank"
+                class="btn btn-primary"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/project-repo-4"
+                target="_blank"
+                class="btn btn-dark"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="carousel-item">
+        <div class="d-flex align-items-center border-0 shadow-lg ">
+          <div class="col-md-6 ">
+            <img
+              src="./Expenzo1.jpg"
+              class="w-100 rounded-start"
+              alt="Project 5"
+            />
+          </div>
+          <div class="col-md-6 p-4">
+            <h3 class="text-xl font-bold">Expenzo</h3>
+            <p class="text-gray-700">
+              Using MERN Stack technology, the Expense Tracker enables users to monitor their financial activities effectively.<br/>
+	• User Authentication: Secure sign-up/login with JWT.<br/>
+	• Income and Expense Tracking: Add, categorize, and analyze transactions.<br/>
+	• Dashboard Overview: Visual insights with total income, expenses, and balance.<br/>
+	• Data Visualization: Interactive charts showing trends and category-wise expenses.<br/>
+	• Transaction History: Editable and filterable lists for better management.<br/>
+📌 Technologies Used: React, Node.js, Express, MongoDB<br/>
+🌟 Highlights: Responsive design and scalable architecture.
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a
+                href="https://exp3nzo.netlify.app/"
+                target="_blank"
+                class="btn btn-primary"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/project-repo-4"
+                target="_blank"
+                class="btn btn-dark"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls (Arrows) -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#projectCarousel"
+      data-bs-slide="prev"
+      style="left: -60px"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#projectCarousel"
+      data-bs-slide="next"
+      style="right: -60px"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+  
+
+  <!-- Skills & Qualifications Section -->
+<section id="skills" class="py-16 px-8">
+  <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">
+    Skills & Qualifications
+  </h2>
+  <p class="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
+    I have experience working with a variety of technologies, ranging from frontend frameworks like React and CSS, to backend technologies such as Node.js, Express, and MongoDB. I also utilize tools like GitHub for version control and Postman for API testing to ensure high-quality and maintainable code.
+  </p>
+
+  <div class="max-w-7xl mx-auto">
+    <!-- Technologies -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+      <!-- Skill Items -->
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML" class="mx-auto mb-2" />
+        <p class="text-gray-700">HTML</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS" class="mx-auto mb-2" />
+        <p class="text-gray-700">CSS</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" class="mx-auto mb-2" />
+        <p class="text-gray-700">JavaScript</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" class="mx-auto mb-2" />
+        <p class="text-gray-700">Node.js</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express.js" class="mx-auto mb-2" />
+        <p class="text-gray-700">Express.js</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React" class="mx-auto mb-2" />
+        <p class="text-gray-700">React</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" class="mx-auto mb-2" />
+        <p class="text-gray-700">MongoDB</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/ios-glyphs/50/000000/github.png" alt="GitHub" class="mx-auto mb-2" />
+        <p class="text-gray-700">GitHub</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/tailwindcss.png" alt="Tailwind CSS" class="mx-auto mb-2" />
+        <p class="text-gray-700">Tailwind CSS</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap" class="mx-auto mb-2" />
+        <p class="text-gray-700">Bootstrap</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png" alt="Postman" class="mx-auto mb-2" />
+        <p class="text-gray-700">Postman</p>
+      </div>
+      <div class="text-center">
+        <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL" class="mx-auto mb-2" />
+        <p class="text-gray-700">MySQL</p>
+      </div>
+    </div>
+  </div>
+  
+<!-- qualifications -->
+<!-- Qualifications -->
+<div class="qualifications">
+  <!-- Title -->
+  <h3 class="text-2xl font-bold text-violet-600 text-center mb-6">
+    Qualifications
+  </h3>
+
+  <!-- Education Section -->
+  <div id="education" class="qualification-content">
+    <div class="zigzag">
+      <div class="zigzag-item left">
+        <h4 class="content text-xl font-bold">MERN Full Stack Development</h4>
+        <p class="text-gray-700">Guvi Geek Network, IIT, Madras <br /> 2024 - Present</p>
+      </div>
+      <div class="zigzag-item right">
+        <h4 class="content text-xl font-bold">Bachelor of Business Administration</h4>
+        <p class="text-gray-700">Bharathiar University <br /> 2018 - 2021</p>
+      </div>
+      <div class="zigzag-item left">
+        <h4 class="content text-xl font-bold">Higher Secondary Certificate</h4>
+        <p class="text-gray-700">Diamond Jubilee Hr Sec School <br /> 2016 - 2018</p>
+      </div>
+      <div class="zigzag-item right">
+        <h4 class="content text-xl font-bold">Sec.School Leaving Certificate</h4>
+        <p class="text-gray-700">Govt Higher Secondary School <br /> 2014 - 2016</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+
+
+  
+
+   <!-- Contact Section -->
+<section id="contact" class="py-16 px-8 ">
+  <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">Contact Me</h2>
+  <p class="text-xl text-center text-violet-600 mb-6">Get in Touch</p>
+  <div class="flex flex-wrap justify-center items-center space-y-6">
+    <!-- Left Side -->
+    <div class="w-full md:w-1/2 flex flex-col space-y-6 items-center">
+      <!-- Address -->
+      <div class="flex items-center space-x-4">
+        <i class="fas fa-map-marker-alt text-violet-600 text-2xl"></i>
+        <p class="text-gray-700 text-lg">3/116, EB Office near,Arasur (Po), <br/> Sathy, Erode, TN-638454</p>
+      </div>
+
+      <!-- Mobile -->
+      <div class="flex items-center space-x-4">
+        <i class="fas fa-phone-alt text-violet-600 text-2xl"></i>
+        <p class="text-gray-700 text-lg">+91 9629274834</p>
+      </div>
+
+      <!-- Email -->
+      <div class="flex items-center space-x-4">
+        <i class="fas fa-envelope text-violet-600 text-2xl"></i>
+        <a href="https://venkateshwaran1112@gmail.com" class="text-gray-700 text-lg hover:text-violet-600">
+          venkateshwaran1112@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="w-full md:w-1/2 flex flex-col space-y-6 items-center">
+      <!-- LinkedIn -->
+      <div class="flex items-center space-x-4">
+        <i class="fab fa-linkedin text-violet-600 text-2xl"></i>
+        <a
+          href="https://www.linkedin.com/in/venkat-sri-developer"
+          target="_blank"
+          class="text-gray-700 text-lg hover:text-violet-600"
+        >
+        venkat-sri-developer
+        </a>
+      </div>
+
+      <!-- GitHub -->
+      <div class="flex items-center space-x-4">
+        <i class="fab fa-github text-violet-600 text-2xl"></i>
+        <a
+          href="https://github.com/yourgithubprofile"
+          target="_blank"
+          class="text-gray-700 text-lg hover:text-violet-600"
+        >
+          GitHub Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- Back to Top Button -->
+ <button id="backToTopBtn" class="fixed bottom-4 right-4 bg-violet-600 text-white p-3 rounded-full shadow-lg hover:bg-violet-700 transition" style="display: none;">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+ 
+  
+<!-- Footer -->
+<footer class="bg-gray-700 text-white py-8">
+  <div class="container mx-auto px-6 lg:px-12">
+    <!-- Footer Top Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- About Me -->
+      <div>
+        <h2 class="text-lg font-semibold text-violet-500 mb-4">About Me</h2>
+        <p class="text-gray-400">
+          I’m Venkat, a passionate Full Stack Developer specializing in the MERN stack. I enjoy building modern, responsive, and user-friendly web applications that solve real-world problems with creative solutions.
+        </p>
+      </div>
+
+      <!-- Get in Touch -->
+      <div>
+        <h2 class="text-lg font-semibold text-violet-500 mb-4">Get in Touch</h2>
+        <ul class="flex space-x-6">
+          <li>
+            <a href="https://www.facebook.com/naveenprofile" target="_blank" class="text-gray-400 hover:text-violet-400">
+              <i class="fab fa-facebook text-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/naveenprofile" target="_blank" class="text-gray-400 hover:text-violet-400">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/venkat-sri-developer" target="_blank" class="text-gray-400 hover:text-violet-400">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/naveenusername" target="_blank" class="text-gray-400 hover:text-violet-400">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+      <p class="text-gray-500">
+        &copy; 2025 Venkat Portfolio. All Rights Reserved.
+      </p>
+         </div>
+  </div>
+</footer>
+
+
+  </main>
+
+    <!-- Mobile Menu Script -->
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        
+  
+    const themeToggleButton = document.getElementById("theme-toggle");
+  
+    themeToggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", currentTheme);
+    });
+  
+    // Apply saved theme from localStorage (if any)
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.body.classList.add(savedTheme);
+    }
+
+   
+  </script>
+  <script> 
+  function showQualification(type) {
+  // Content containers
+  const educationContent = document.getElementById('education');
+  const workContent = document.getElementById('work');
+
+  // Buttons
+  const educationButton = document.getElementById('btn-education');
+  const workButton = document.getElementById('btn-work');
+
+  if (type === 'education') {
+    // Show Education, Hide Work
+    educationContent.style.display = 'block';
+    workContent.style.display = 'none';
+
+    // Set Active/Outlined Classes
+    educationButton.classList.add('btn-primary');
+    educationButton.classList.remove('btn-outline-primary');
+    workButton.classList.add('btn-outline-primary');
+    workButton.classList.remove('btn-primary');
+  } else if (type === 'work') {
+    // Show Work, Hide Education
+    workContent.style.display = 'block';
+    educationContent.style.display = 'none';
+
+    // Set Active/Outlined Classes
+    workButton.classList.add('btn-primary');
+    workButton.classList.remove('btn-outline-primary');
+    educationButton.classList.add('btn-outline-primary');
+    educationButton.classList.remove('btn-primary');
+  }
+}
+
+
+
+</script>
+
+
+  </body>
+</html>
