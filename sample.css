@@ -1,4 +1,11 @@
 /* Dark Mode Transition */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -21,6 +28,21 @@ body.dark-mode .text-gray-700 {
   color: #e089e3;
 }
 
+
+/* projects  */
+
+.custom-width {
+  max-width: 80%; /* Adjust width as needed */
+  margin: auto; /* Centering */
+}
+
+@media (max-width: 768px) {
+  .custom-width {
+    max-width: 95%; /* Adjust for smaller screens */
+  }
+}
+
+
 /* Qualification Section */
 .qualification-content {
   max-width: 800px;
@@ -31,7 +53,7 @@ body.dark-mode .text-gray-700 {
 .zigzag {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   position: relative;
 }
 
@@ -44,18 +66,19 @@ body.dark-mode .text-gray-700 {
   height: 100%;
   background-color: #6c63ff;
   transform: translateX(-50%);
-  z-index: -1; /* Ensure line is behind content */
+  z-index: -1;
 }
 
+/* Individual items */
 .zigzag-item {
   position: relative;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 8px;
   width: 45%;
   box-shadow: 0 4px 6px rgba(89, 2, 240, 0.1);
-  
 }
 
+/* Left & Right Alignment */
 .zigzag-item.left {
   align-self: flex-start;
   text-align: left;
@@ -66,6 +89,7 @@ body.dark-mode .text-gray-700 {
   text-align: right;
 }
 
+/* Center Dots */
 .zigzag-item::after {
   content: '';
   position: absolute;
@@ -87,6 +111,7 @@ body.dark-mode .text-gray-700 {
   right: calc(100% + 10px);
 }
 
+/* Text Styling */
 .zigzag-item h4 {
   margin: 0 0 10px;
   color: #333;
@@ -97,12 +122,8 @@ body.dark-mode .text-gray-700 {
   color: #666;
 }
 
-/* Media query for smaller screens */
+/* Responsive Fixes for Small Screens */
 @media screen and (max-width: 768px) {
-  .zigzag {
-    gap: 20px;
-  }
-
   .zigzag::before {
     display: none; /* Remove the central line */
   }
@@ -110,22 +131,14 @@ body.dark-mode .text-gray-700 {
   .zigzag-item {
     width: 100%;
     text-align: left;
-    padding: 10px 20px;
+    padding: 15px;
     display: flex;
-    align-items: center;
-    gap: 10px;
-   
-    box-shadow: none; /* Remove box-shadow for simplicity */
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(89, 2, 240, 0.1); /* Remove box-shadow for simplicity */
   }
 
   .zigzag-item::after {
     display: none; /* Remove dots */
-  }
-
-  .zigzag-item::before {
-    content: '|'; /* Add arrow for each item */
-    font-size: 38px;
-    color: #6c63ff;
   }
 
   .zigzag-item.left,
@@ -134,3 +147,6 @@ body.dark-mode .text-gray-700 {
     text-align: left;
   }
 }
+
+
+

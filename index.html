@@ -76,16 +76,24 @@
     </style>
   </head>
   
-  <body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
+  <body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden ">
     <!-- Navbar -->
-    <header class="w-full fixed top-0 bg-gray-400 shadow-md py-3 px-8 flex items-center z-10">
+    <header class="w-full fixed top-0 left-0 bg-gray-400 shadow-md py-3 px-10 flex items-center z-50">
+
       <!-- Logo (Left side) -->
-      <div class="text-2xl font-bold text-gray-700">
+      <div class="text-lg sm:text-2xl font-bold text-gray-700">
         Venkateshwaran V
       </div>
   
       <!-- Navbar Menu and Other Elements -->
       <nav class="ml-auto flex items-center space-x-6">
+         <!-- Mobile Menu Button (Toggle Button) -->
+         <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl">
+          ☰
+        </button>
+
+         <!-- Theme Toggle (Moon Icon for Dark/Light Mode) -->
+       
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 text-gray-700 font-semibold">
           <li><a href="#home" class="hover:text-violet-600">Home</a></li>
@@ -95,15 +103,11 @@
           <li><a href="#contact" class="hover:text-violet-600">Contact</a></li>
         </ul>
   
-        <!-- Theme Toggle (Moon Icon for Dark/Light Mode) -->
         <button id="theme-toggle" class="text-2xl text-gray-700">
           <i class="fas fa-sun-moon text-2xl">🌙</i>
         </button>
   
-        <!-- Mobile Menu Button (Toggle Button) -->
-        <button id="menu-toggle" class="md:hidden text-violet-600 text-2xl">
-          ☰
-        </button>
+       
       </nav>
   
       <!-- Mobile Menu (Initially Hidden) -->
@@ -150,11 +154,11 @@
     </script>
     
     
-<main id="main-content" class="pt-24">
+<main id="main-content" class="pt-20">
     <!-- Hero Section -->
     <section
       id="home"
-      class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-8 pt-24"
+      class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-8 pt-15"
     >
       <!-- Left Content -->
       <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
@@ -173,7 +177,7 @@
       </div>
       <!-- Right Image -->
       <div class="w-full md:w-1/4 flex justify-center items-center">
-        <div class="relative w-80 h-80">
+        <div class="relative w-40 sm:w-80 h-40 sm:h-80">
           <!-- Neon Border -->
           <div class="absolute inset-0 rounded-full border-4 "></div>
           <!-- Image -->
@@ -189,7 +193,7 @@
     
 
     <!-- About Section -->
-<section id="about" class="py-16 px-8 ">
+<section id="about" class="py-16 pt-24 px-8 ">
     <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">
       About Me
     </h2>
@@ -198,7 +202,7 @@
       <!-- Left Part: Image -->
       <div class="flex-shrink-0 mb-6 md:mb-0 md:w-1/4">
         <img 
-          src="./abme-Photoroom.png" 
+          src="./pixelcut.png" 
           alt="About Me" 
           class="w-full h-auto rounded-lg  bg-transparent"
         />
@@ -212,11 +216,14 @@
         </p>
         
         <!-- Download Resume Button -->
-        <a href="path/to/your-resume.pdf" 
-          class="inline-block bg-violet-600 text-white py-2 px-6 rounded-lg hover:bg-violet-700 transition duration-300"
-          download="My_Resume">
-          Download Resume
-        </a>
+       <a 
+  href="https://drive.google.com/file/d/1mFTb3k6dKXyhkNySHS5RA8-EuY_wNcao/view?usp=sharing" 
+  class="inline-block bg-violet-600 text-white py-2 px-6 rounded-lg hover:bg-violet-700 transition duration-300" 
+  target="_blank" 
+  rel="noopener noreferrer">
+  View Resume
+</a>
+
       </div>
     </div>
   </section>
@@ -224,8 +231,13 @@
 
     
 <!-- Projects Section --> 
-<section id="projects" class="py-16">
+<section id="projects" class="py-16 pt-24 ">
   <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">Projects</h2>
+  <p class="text-md text-center text-gray-700 mb-6">
+    👤 User Credentials: <br class="sm:hidden">
+    📧 Email: abc@gmail.com <span class="block sm:inline">🔑 Password: abc123456</span> 
+    <span class="block sm:inline">🔢 Admin PIN: 2512</span>
+  </p>
   
   <div id="projectCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
     <!-- Carousel Indicators -->
@@ -268,37 +280,36 @@
     <div class="carousel-inner">
       <!-- Project 1 -->
       <div class="carousel-item active">
-        <div class="d-flex align-items-center border-0 shadow-lg ">
+        <div class="row d-flex flex-column flex-md-row align-items-center border-0 shadow-lg">
           <div class="col-md-6">
             <img
-              src="./Forksy2.jpg"
+              src="./Occ.jpg"
               class="w-100 rounded-start"
               alt="Project 1"
             />
           </div>
           <div class="col-md-6 p-4">
-            <h3 class="text-xl font-bold">Forksy</h3>
+            <h3 class="text-xl font-bold">Occasio</h3>
             <p class="text-gray-700">
-              Online Food Delivery System
-A seamless platform to discover restaurants, browse menus, place orders. <br/>
-	• Restaurant Listings: Explore profiles with details like cuisine and menus.<br/>
-	• Menu Browsing: View menus with customizable options and save favorites for easy access.<br/>
-	• Order Tracking: Real-time updates from order placement to delivery with notifications.<br/>
+              A dynamic platform for discovering and registering for events, offering seamless ticketing with QR Code, real-time notifications, and secure payment processing. <br/>
+	• Attendee Dashboard: Users can view their registered events, download tickets, and track bookings<br/>
+	• Ticketing System: Generates unique QR codes for each registered event ticket..<br/>
+	• Calendar View: Visual representation of upcoming events for easy browsing..<br/>
 	• Secure Payments: Integrated Razorpay for fast, secure transactions and payment history.<br/>
-	• User Management: Secure sign-up/login with JWT, profile management, and order history access.<br/>
-📌 Technologies Used: React, Node.js, Express, MongoDB, TailwindCSS, Razorpay<br/>
-🌟 Highlights: Responsive design, real-time updates, and scalable architecture.
+	• Event Management: Admins can create, update, and delete events with images uploaded via Cloudinary.<br/>
+📌 Technologies Used: QR Code Generation, TailwindCSS, Razorpay, Socket.io, Cloudinary<br/>
+🌟 Highlights: QR Code generation for Tickets, and real-time updates.
 
             </p>
             <div class="d-flex gap-3 mt-3">
               <a
-                href="https://forksy.netlify.app"
+                href="https://occasiso.netlify.app/"
                 target="_blank"
                 class="btn btn-primary"
                 >Live Demo</a
               >
               <a
-                href="https://github.com/project-repo-1"
+                href="https://github.com/SriVenkat77/Occasio.git"
                 target="_blank"
                 class="btn btn-dark"
                 >GitHub</a
@@ -310,36 +321,36 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
 
       <!-- Project 2 -->
       <div class="carousel-item">
-        <div class="d-flex align-items-center border-0 shadow-lg ">
+        <div class="row d-flex flex-column flex-md-row align-items-center border-0 shadow-lg ">
           <div class="col-md-6">
             <img
-              src="./occasio2.jpg"
+              src="./Tun.jpg"
               class="w-100 rounded-start"
               alt="Project 2"
             />
           </div>
           <div class="col-md-6 p-4">
-            <h3 class="text-xl font-bold">Occasio</h3>
+            <h3 class="text-xl font-bold">Tuneify</h3>
             <p class="text-gray-700">
-           A platform to discover, create, manage, and register for events with seamless ticketing, payment, and QR code generation. <br/>
-	• Event Listings: Browse upcoming events with details like name, date, time, and location.<br/>
-	• Ticketing System: Securely register for events and get unique QR-coded tickets.<br/>
-	• Payment Integration: Seamless payment processing via Razorpay for event registration.<br/>
-	• User Authentication: Secure sign-up/login with JWT for managing event registrations.<br/>
-	• Responsive Design: Fully mobile-friendly UI using TailwindCSS.<br/>
-📌 Technologies Used: React, Node.js, Express, MongoDB, Razorpay, TailwindCSS<br/>
-🌟 Highlights: User-friendly event management, secure payments, and QR code generation.
+           A feature-rich platform for streaming music, managing albums, and subscribing to a premium plan for an ad-free experience. <br/>
+	• Music Playback: Users can browse albums, search for songs, and enjoy seamless playback <br/>
+	• Premium Subscription: Razorpay integration for ad-free music streaming with secure payments.<br/>
+	•  Cloud Storage: Cloudinary integration for storing album and song images.<br/>
+	• Admin Panel: Manage albums, songs, and view user data with an intuitive dashboard.<br/>
+	• Secure Authentication: JWT-based user authentication with login, registration, and premium status via NodeMailer.<br/>
+📌 Technologies Used: React Vite, Cloudinary, Express, Node.js, Razorpay, TailwindCSS<br/>
+🌟 Highlights: Ad-free premium experience, real-time search, and modern responsive UI.
 
             </p>
             <div class="d-flex gap-3 mt-3">
               <a
-                href="https://0ccasio.netlify.app/"
+                href="https://tuneifya.netlify.app/"
                 target="_blank"
                 class="btn btn-primary"
                 >Live Demo</a
               >
               <a
-                href="https://github.com/project-repo-2"
+                href="https://github.com/SriVenkat77/Tuneify.git"
                 target="_blank"
                 class="btn btn-dark"
                 >GitHub</a
@@ -351,10 +362,10 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
 
       <!-- Project 3 -->
       <div class="carousel-item">
-        <div class="d-flex align-items-center border-0 shadow-lg ">
+        <div class="row d-flex flex-column flex-md-row align-items-center border-0 shadow-lg ">
           <div class="col-md-6">
             <img
-              src="./Expenzo.jpg"
+              src="./Fix.jpg"
               class="w-100 rounded-start"
               alt="Project 3"
             />
@@ -362,24 +373,25 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
           <div class="col-md-6 p-4">
             <h3 class="text-xl font-bold">FixmyRide</h3>
             <p class="text-gray-700">
-              Using MERN Stack technology, the Expense Tracker enables users to monitor their financial activities effectively.<br/>
-	• User Authentication: Secure sign-up/login with JWT.<br/>
-	• Income and Expense Tracking: Add, categorize, and analyze transactions.<br/>
-	• Dashboard Overview: Visual insights with total income, expenses, and balance.<br/>
-	• Data Visualization: Interactive charts showing trends and category-wise expenses.<br/>
-	• Transaction History: Editable and filterable lists for better management.<br/>
-📌 Technologies Used: React, Node.js, Express, MongoDB<br/>
-🌟 Highlights: Responsive design and scalable architecture.
+              A seamless platform for booking bike maintenance services, connecting customers with service providers efficiently.<br/>
+	• User Authentication: Role-based authentication for customers and providers using JWT.<br/>
+  • Service Booking: Customers can browse services, schedule appointments, and receive automated confirmations.<br/>
+		• Secure Payments: Integrated Razorpay for hassle-free transactions.<br/>
+	• Real-Time Updates: Live status tracking for service progress using Socket.io.<br/>
+  • Notifications & Emails: Instant notifications via React Toast and automated emails via Nodemailer.<br/>
+	
+📌 Technologies Used: React,Zustand, TailwindCSS, Razorpay, Node.js, Express, Socket.io<br/>
+👤 Highlights: real-time service tracking, secure payments and automated emails.
             </p>
             <div class="d-flex gap-3 mt-3">
               <a
-                href="https://project-demo-link-3.com"
+                href="https://fixmyridea.netlify.app/"
                 target="_blank"
                 class="btn btn-primary"
                 >Live Demo</a
               >
               <a
-                href="https://github.com/project-repo-3"
+                href="https://github.com/SriVenkat77/FixmyRide.git"
                 target="_blank"
                 class="btn btn-dark"
                 >GitHub</a
@@ -391,36 +403,37 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
 
       <!-- Project 4 -->
       <div class="carousel-item">
-        <div class="d-flex align-items-center border-0 shadow-lg ">
+        <div class="row d-flex flex-column flex-md-row align-items-center border-0 shadow-lg ">
           <div class="col-md-6 ">
             <img
-              src="./Spotify1.jpg"
+              src="./For.jpg"
               class="w-100 rounded-start"
               alt="Project 4"
             />
           </div>
           <div class="col-md-6 p-4">
-            <h3 class="text-xl font-bold">Spotify-Clone</h3>
+            <h3 class="text-xl font-bold">Forksy</h3>
             <p class="text-gray-700">
-              Using MERN Stack technology, the Spotify Clone provides users with a seamless music streaming experience and an admin panel for managing content. <br/>
+              Online Food Delivery System
+A seamless platform to discover restaurants, browse menus, place orders. <br/>
 
-• User Authentication: Secure registration, login, and password reset with JWT-based <br/>
-• Music Streaming: Explore albums, songs and play music with an integrated audio player.<br/>
-• Admin Panel: Add and manage albums, songs, and associated images using a user-friendly interface with Cloudinary integration for image uploads.<br/>
-• Search Functionality: Dynamic search bar for finding songs by title.<br/>
-
-📌 Technologies Used: React, Node.js, Express, MongoDB, Cloudinary<br/>
-🌟 Highlights: Responsive design, modern UI with TailwindCSS, and scalable architecture.
+• Restaurant Listings: Explore profiles with details like cuisine and menus and add to favourite restaurants. <br/>
+• Menu Browsing: View menus with customizable options like Seasonal, Availabilty.<br/>
+•  User Management: Secure sign-up/login with JWT, profile management, and order history access.<br/>
+• Order Tracking: Real-time updates from order placement to delivery with notifications.<br/>
+• Secure Payments: Integrated Razorpay for fast, secure transactions and payment history.<br/>
+📌 Technologies Used: React, Socket.io, Node.js, Express, MongoDB<br/>
+🌟 Highlights: Responsive design, real-time updates, and scalable architecture.
             </p>
             <div class="d-flex gap-3 mt-3">
               <a
-                href="https://spotifyn.netlify.app/"
+                href="https://forksy.netlify.app/"
                 target="_blank"
                 class="btn btn-primary"
                 >Live Demo</a
               >
               <a
-                href="https://github.com/project-repo-4"
+                href="https://github.com/SriVenkat77/Forksy.git"
                 target="_blank"
                 class="btn btn-dark"
                 >GitHub</a
@@ -431,10 +444,10 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
       </div>
       <!-- Project 5 -->
       <div class="carousel-item">
-        <div class="d-flex align-items-center border-0 shadow-lg ">
+        <div class="row d-flex flex-column flex-md-row align-items-center border-0 shadow-lg">
           <div class="col-md-6 ">
             <img
-              src="./Expenzo1.jpg"
+              src="Exp.jpg"
               class="w-100 rounded-start"
               alt="Project 5"
             />
@@ -443,13 +456,13 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
             <h3 class="text-xl font-bold">Expenzo</h3>
             <p class="text-gray-700">
               Using MERN Stack technology, the Expense Tracker enables users to monitor their financial activities effectively.<br/>
-	• User Authentication: Secure sign-up/login with JWT.<br/>
-	• Income and Expense Tracking: Add, categorize, and analyze transactions.<br/>
+	• User Authentication: Secure sign-up with Avatar selection for user profile and login with JWT for financial transactions<br/>
+	• Income and Expense Tracking: Add, Modify, Remove,categorize, and analyze financial transactions.<br/>
 	• Dashboard Overview: Visual insights with total income, expenses, and balance.<br/>
-	• Data Visualization: Interactive charts showing trends and category-wise expenses.<br/>
+	• Data Visualization: Interactive charts and Bars showing trends and category-wise expenses.<br/>
 	• Transaction History: Editable and filterable lists for better management.<br/>
 📌 Technologies Used: React, Node.js, Express, MongoDB<br/>
-🌟 Highlights: Responsive design and scalable architecture.
+🌟 Highlights: Responsive design with Charts and bars.
             </p>
             <div class="d-flex gap-3 mt-3">
               <a
@@ -459,7 +472,7 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
                 >Live Demo</a
               >
               <a
-                href="https://github.com/project-repo-4"
+                href="https://github.com/SriVenkat77/Expenzo.git"
                 target="_blank"
                 class="btn btn-dark"
                 >GitHub</a
@@ -497,7 +510,7 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
   
 
   <!-- Skills & Qualifications Section -->
-<section id="skills" class="py-16 px-8">
+<section id="skills" class="py-16 pt-24 px-8">
   <h2 class="text-3xl font-bold text-center text-violet-600 mb-6">
     Skills & Qualifications
   </h2>
@@ -560,7 +573,7 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
     </div>
   </div>
   
-<!-- qualifications -->
+
 <!-- Qualifications -->
 <div class="qualifications">
   <!-- Title -->
@@ -572,19 +585,23 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
   <div id="education" class="qualification-content">
     <div class="zigzag">
       <div class="zigzag-item left">
-        <h4 class="content text-xl font-bold">MERN Full Stack Development</h4>
-        <p class="text-gray-700">Guvi Geek Network, IIT, Madras <br /> 2024 - Present</p>
-      </div>
+        <h4 class="content text-lg font-bold">MERN Full Stack Development</h4>
+        <p class="text-gray-700">
+          Guvi Geek Network, IIT, Madras <br />
+          2024 - Present
+        </p>
+        </div>
+      
       <div class="zigzag-item right">
-        <h4 class="content text-xl font-bold">Bachelor of Business Administration</h4>
+        <h4 class="content text-lg font-bold">Bachelor of Business Administration</h4>
         <p class="text-gray-700">Bharathiar University <br /> 2018 - 2021</p>
       </div>
       <div class="zigzag-item left">
-        <h4 class="content text-xl font-bold">Higher Secondary Certificate</h4>
+        <h4 class="content text-lg font-bold">Higher Secondary Certificate</h4>
         <p class="text-gray-700">Diamond Jubilee Hr Sec School <br /> 2016 - 2018</p>
       </div>
       <div class="zigzag-item right">
-        <h4 class="content text-xl font-bold">Sec.School Leaving Certificate</h4>
+        <h4 class="content text-lg font-bold">Sec.School Leaving Certificate</h4>
         <p class="text-gray-700">Govt Higher Secondary School <br /> 2014 - 2016</p>
       </div>
     </div>
@@ -606,11 +623,7 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
   <div class="flex flex-wrap justify-center items-center space-y-6">
     <!-- Left Side -->
     <div class="w-full md:w-1/2 flex flex-col space-y-6 items-center">
-      <!-- Address -->
-      <div class="flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-violet-600 text-2xl"></i>
-        <p class="text-gray-700 text-lg">3/116, EB Office near,Arasur (Po), <br/> Sathy, Erode, TN-638454</p>
-      </div>
+     
 
       <!-- Mobile -->
       <div class="flex items-center space-x-4">
@@ -641,70 +654,32 @@ A seamless platform to discover restaurants, browse menus, place orders. <br/>
         </a>
       </div>
 
+      
+
       <!-- GitHub -->
       <div class="flex items-center space-x-4">
         <i class="fab fa-github text-violet-600 text-2xl"></i>
         <a
-          href="https://github.com/yourgithubprofile"
+          href="https://github.com/SriVenkat77"
           target="_blank"
           class="text-gray-700 text-lg hover:text-violet-600"
         >
-          GitHub Profile
+          SriVenkat77
         </a>
       </div>
     </div>
   </div>
 </section>
- <!-- Back to Top Button -->
- <button id="backToTopBtn" class="fixed bottom-4 right-4 bg-violet-600 text-white p-3 rounded-full shadow-lg hover:bg-violet-700 transition" style="display: none;">
-  <i class="fas fa-arrow-up"></i>
-</button>
+
 
  
   
 <!-- Footer -->
-<footer class="bg-gray-700 text-white py-8">
-  <div class="container mx-auto px-6 lg:px-12">
-    <!-- Footer Top Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- About Me -->
-      <div>
-        <h2 class="text-lg font-semibold text-violet-500 mb-4">About Me</h2>
-        <p class="text-gray-400">
-          I’m Venkat, a passionate Full Stack Developer specializing in the MERN stack. I enjoy building modern, responsive, and user-friendly web applications that solve real-world problems with creative solutions.
-        </p>
-      </div>
-
-      <!-- Get in Touch -->
-      <div>
-        <h2 class="text-lg font-semibold text-violet-500 mb-4">Get in Touch</h2>
-        <ul class="flex space-x-6">
-          <li>
-            <a href="https://www.facebook.com/naveenprofile" target="_blank" class="text-gray-400 hover:text-violet-400">
-              <i class="fab fa-facebook text-2xl"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/naveenprofile" target="_blank" class="text-gray-400 hover:text-violet-400">
-              <i class="fab fa-instagram text-2xl"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/venkat-sri-developer" target="_blank" class="text-gray-400 hover:text-violet-400">
-              <i class="fab fa-linkedin text-2xl"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/naveenusername" target="_blank" class="text-gray-400 hover:text-violet-400">
-              <i class="fab fa-github text-2xl"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+<footer class="bg-gray-700 text-white">
+ 
 
     <!-- Footer Bottom Section -->
-    <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+    <div class="mt-2 border-t border-gray-700 pt-2 text-center">
       <p class="text-gray-500">
         &copy; 2025 Venkat Portfolio. All Rights Reserved.
       </p>
