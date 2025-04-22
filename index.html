@@ -121,9 +121,13 @@
                     </div>
 
                     <div class="profile-pic" data-aos="fade-up">
-                        <img src="images/pp3.jpg" 
-                             srcset="images/pp3.jpg 1x, images/pp3.jpg 2x" alt="">
-                    </div>
+                        <picture>
+                          <source media="(max-width: 799px)" srcset="images/pp3.jpg">
+                          <source media="(min-width: 800px)" srcset="images/pp9.png">
+                          <img src="images/pp8.png" alt="Profile Picture">
+                        </picture>
+                      </div>
+                      
 
                     
 
@@ -626,11 +630,13 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
+    <script> 
         function changeBackground() {
             let heroSection = document.querySelector('.s-hero');
-            if (window.innerWidth < 1000) {
+            if (window.innerWidth < 800) {
                 heroSection.style.backgroundImage = "url('images/pp4.jpg')";
+            } else if (window.innerWidth < 1000) {
+                heroSection.style.backgroundImage = "url('images/pp5.jpg')";
             } else {
                 heroSection.style.backgroundImage = "url('images/pp1.jpg')";
             }
@@ -639,6 +645,7 @@
         window.addEventListener('resize', changeBackground);
         window.addEventListener('load', changeBackground);
     </script>
+    
 
 
 <script>

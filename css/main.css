@@ -2520,6 +2520,9 @@ html.no-csstransitions .hero-content {
 .s-abouts__section h3 {
   color: #f9861a;
 }
+.s-about__section p {
+  font-size: 2rem;
+}
 
 
 
@@ -2533,13 +2536,12 @@ html.no-csstransitions .hero-content {
   top: 0;
   bottom: 0;
   right: 0;
-  left: calc(50% + 12vw);
+  left: calc(60% + 12vw);
 }
 
 .s-about__section--profile .row {
   position: relative;
 }
-
 .s-about__section--profile .profile-pic {
   width: 48vw;
   position: absolute;
@@ -2548,8 +2550,8 @@ html.no-csstransitions .hero-content {
 }
 
 .s-about__section--profile .profile-pic img {
-  width: 400px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
  
 }
 
@@ -2715,6 +2717,7 @@ html.no-csstransitions .hero-content {
     height: auto;
     max-width: 300px;
   }
+}
 
   .position {
     padding-right: 0;
@@ -3245,6 +3248,14 @@ html.no-csstransitions .hero-content {
   .folio-item__caption {
       width: 95%;
       padding: 15px;
+  }
+
+  .folio-item__caption {
+    display: none !important;
+  }
+
+  .folio-item__caption.active {
+    display: block !important;
   }
   .folio-buttons {
       flex-direction: column;
